@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CITRIS eVTOL Routing &amp; Simulation System | Matthew Huynh</title><meta name="description" content="Graph-based eVTOL routing and network simulation under weather, airspace, hazard, population, and range constraints. Team lead and primary simulation developer."><meta property="og:title" content="CITRIS eVTOL Routing &amp; Simulation System | Matthew Huynh"><meta property="og:description" content="Graph-based eVTOL routing and network simulation under weather, airspace, hazard, population, and range constraints. Team lead and primary simulation developer."><meta property="og:type" content="website"><!-- TODO: Add an absolute og:image URL when project photography is available. --><link rel="stylesheet" href="../assets/css/styles.css"><script src="../assets/js/main.js" defer></script><script src="../assets/js/citris.js" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Matthew Huynh | Portfolio</a><button class="menu-toggle" aria-controls="navigation" aria-expanded="false" hidden>Menu <span aria-hidden="true">+</span></button><nav id="navigation" aria-label="Main navigation"><a href="../index.html#projects" aria-current="page">Projects</a><a href="../about.html">About</a><a href="../resume.html">Resume</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main">
+<div class="case-study software-project citris-study">
+<section class="page-hero">
+<a class="back-link" href="../index.html#projects">&larr; All projects</a>
+<p class="eyebrow">03 / Software / Simulation</p>
+<h1>CITRIS eVTOL Routing &amp; Simulation System</h1>
+<p class="page-lead">Graph-based routing and simulation for eVTOL operations under weather, airspace, hazard, population, and range constraints.</p>
+<dl class="project-meta">
+<div><dt>Context</dt><dd>2026 CITRIS Aviation Prize<br>UC Merced</dd></div>
+<div><dt>Role</dt><dd>Team Lead / Primary Simulation Developer</dd></div>
+<div><dt>Implementation</dt><dd>Strategic pre-flight planning &amp; network simulation</dd></div>
+<div><dt>Tools &amp; methods</dt><dd>React &middot; FastAPI &middot; Python &middot; Routing &middot; Simulation</dd></div>
+</dl>
+<figure class="citris-figure"><a href="../assets/images/citris/simulation-interface.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Final Airlink simulator with fleet manager, California route and hazard map, flight details, and simulation timeline"><img src="../assets/images/citris/simulation-interface.png" width="1800" height="1013" alt="Final Airlink simulator with fleet manager, California route and hazard map, flight details, and simulation timeline" fetchpriority="high"></a><figcaption><span class="eyebrow">FIG. 00</span> Final simulation interface: fleet state, active missions, environmental constraints, and network operations. <a href="../assets/images/citris/simulation-interface.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+<div class="actions"><a class="button" href="../assets/docs/CITRIS_Aviation_Prize_Merced_Airlink_Nexus_Phase_2.pdf" target="_blank" rel="noopener noreferrer">View proposal <span aria-hidden="true">&nearr;</span></a><a class="text-link" href="#simulation-results">View simulation results &darr;</a></div>
+</section>
+<section class="overview-grid">
+<div><p class="eyebrow">THE SYSTEM</p><h2>Overview</h2>
+<p>The Airlink concept investigated a distributed eVTOL network connecting UC campuses and regional transportation nodes across Northern California. My primary responsibility was developing the simulation framework used to explore how that network would operate.</p>
+<p>The simulator connects routing with mission acceptance, aircraft range, fleet availability, environmental constraints, and network performance. It supports evaluation of infrastructure and operating decisions beyond shortest-path routing alone.</p></div>
+<div><p class="eyebrow">TEAM LEAD / PRIMARY SIMULATION DEVELOPER</p><h2>My contributions</h2>
+<p>I led the team and technical direction, designed the operational state machine, and wrote the simulation software. The wider proposal and infrastructure and economic research were a team effort.</p>
+<ul class="role-list"><li>Led candidate vertiport and network-site evaluation.</li><li>Built graph construction, route search, multi-leg planning, and environmental data integration.</li><li>Developed the Python/FastAPI backend and React/Leaflet fleet interface.</li><li>Implemented fleet, mission, simulation-time, cost, and performance modeling.</li><li>Integrated the simulation subsystems with the operational architecture.</li></ul></div>
+</section>
+<section class="engineering-process">
+<div class="section-heading"><div><p class="eyebrow">SELECTED DEVELOPMENT WORK</p><h2>Simulation development</h2></div></div>
+<div class="citris-stages">
+<a href="#routing-evaluation"><strong>Routing &amp; map evaluation</strong><span>Compare geographic constraints</span></a>
+<a href="#early-prototype"><strong>Early prototype</strong><span>Validate network and range behavior</span></a>
+<a href="#fleet-simulation"><strong>Final simulation interface</strong><span>Inspect integrated network operations</span></a>
+</div>
+<section id="routing-evaluation" class="process-row">
+<div><p class="eyebrow">ROUTING &amp; MAP EVALUATION</p><h3>Environmental constraints</h3>
+<p>Weather, airspace, terrain, population exposure, and hazard data inform route evaluation. These layers influence feasibility, graph construction, routing cost, and mission acceptance; they serve more than a visual role.</p>
+<p>Comparing default, topographic, and airspace views made the relationship between network geometry and geographic constraints inspectable.</p></div>
+<figure class="citris-figure"><img src="../assets/images/citris/mapdefault.png" width="2500" height="2500" alt="Routing-network views cycling in order through the default map, terrain, and airspace layers" loading="lazy" id="routing-layers" data-animated-src="../assets/images/citris/routing-layers.gif"><figcaption><span class="eyebrow">FIG. 01</span> Default map &rarr; terrain &rarr; airspace. Each view remains visible for 1.5 seconds. <button class="button" id="map-animation-toggle" aria-controls="routing-layers" hidden>Pause map animation</button></figcaption></figure>
+</section>
+<section id="early-prototype" class="process-row">
+<div><p class="eyebrow">EARLY PROTOTYPE</p><h3>Validating the network concept</h3>
+<p>The initial Python/Pygame simulation tested network representation, range-constrained connectivity, multi-leg routing, and basic aircraft spawning and simulation behavior. It provided a rapid way to evaluate the concept before integrating the full interface.</p>
+<h4>Multi-leg network planning</h4><p>The router evaluates direct connectivity and can fall back to paths through intermediate nodes when necessary. Transfer and operational penalties help assess routes across the regional network within aircraft range limits.</p></div>
+<figure class="citris-figure"><a href="../assets/images/citris/legacy.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Early Python and Pygame simulator showing range-constrained network connections and multi-leg routes"><img src="../assets/images/citris/legacy.png" width="2084" height="1264" alt="Early Python and Pygame simulator showing range-constrained network connections and multi-leg routes" loading="lazy"></a><figcaption><span class="eyebrow">FIG. 02</span> Early Python/Pygame prototype used to test network connectivity and multi-leg routing. <a href="../assets/images/citris/legacy.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section id="fleet-simulation" class="citris-section">
+<p class="eyebrow">FINAL SIMULATION INTERFACE</p><h3>Fleet-level simulation</h3>
+<p class="citris-intro">The final interface, shown at the top of this page, makes network behavior inspectable as a simulated operating day progresses. Aircraft, routes, constraints, and mission state can be examined together.</p>
+<div class="citris-grid"><div><h4>Fleet &amp; mission state</h4><p>Aircraft availability, battery state, active flights, and selected mission details.</p></div><div><h4>Routes &amp; decisions</h4><p>Map overlays, route breakdowns, route-selection explanations, and departure and arrival estimates.</p></div><div><h4>Simulation controls</h4><p>Accelerated simulation time, operating controls, and network-level statistics.</p></div></div>
+</section>
+</section>
+<section class="citris-section">
+<p class="eyebrow">ROUTING ARCHITECTURE</p><h2>Constraint-aware routing</h2>
+<p class="citris-intro">Northern California is represented as a weighted spatial graph connecting campus vertiports, airports, and intermediate field nodes. Distance-limited connectivity and aircraft range bound the network; a Dijkstra-based planner searches for the lowest-cost feasible route.</p>
+<ol class="citris-flow"><li>Graph</li><li>Constraint evaluation</li><li>Route search</li><li>Mission plan</li></ol>
+<div class="citris-grid citris-two"><div><h3>Hard constraints</h3><p>Critical feasibility or safety violations can remove candidate edges entirely. Unsafe weather, restricted areas, and range limits can prevent a route from being considered.</p></div><div><h3>Soft constraints</h3><p>Less desirable routes remain available with increased effective cost. Caution weather, population exposure, distance, and route geometry can steer planning toward alternative corridors.</p></div></div>
+</section>
+<section class="citris-section">
+<p class="eyebrow">MISSION ARCHITECTURE</p><h2>Operational state machine</h2>
+<p class="citris-intro">I designed the mission logic to connect pre-flight validation with enroute contingencies, diversion, emergency response, landing, recovery, and return to service.</p>
+<p class="citris-scope"><strong>Implemented scope:</strong> strategic mission planning and pre-flight routing. The broader state machine defines the operational architecture; real-time in-flight replanning and tactical conflict avoidance are planned extensions.</p>
+<figure class="citris-figure"><a href="../assets/images/citris/state_machine_entire.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Operational state-machine diagram connecting pre-flight checks, routing, enroute contingencies, emergency response, landing, and recovery"><img src="../assets/images/citris/state_machine_entire.png" width="1800" height="900" alt="Operational state-machine diagram connecting pre-flight checks, routing, enroute contingencies, emergency response, landing, and recovery" loading="lazy"></a><figcaption><span class="eyebrow">FIG. 03</span> Designed operational architecture. Mid-flight replanning and tactical conflict handling are future simulation capabilities. <a href="../assets/images/citris/state_machine_entire.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+<div class="citris-grid citris-two citris-phases">
+<div><h3>Pre-flight</h3><p>Mission request, readiness, route feasibility, battery and range checks, launch clearance, or rejection.</p></div>
+<div><h3>Mid-flight architecture</h3><p>Designed enroute logic for weather, traffic, and hazard conflicts, diversion, and emergency response.</p></div>
+<div><h3>End-flight architecture</h3><p>Approach and landing clearance, unloading, aircraft assessment, recharge or maintenance, and return to service.</p></div>
+<div><h3>Emergency architecture</h3><p>Emergency-response pathways, safe landing-site selection, and recovery.</p></div>
+</div>
+<div class="citris-details">
+<details><summary>Pre-flight detail</summary><figure class="citris-figure"><a href="../assets/images/citris/state_machine_pre.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Pre-flight detail from the designed operational state machine"><img src="../assets/images/citris/state_machine_pre.png" width="1800" height="900" alt="Pre-flight detail from the designed operational state machine" loading="lazy"></a><figcaption><span class="eyebrow">FIG. 04</span> Supporting operational logic; open the full-size diagram to inspect transitions. <a href="../assets/images/citris/state_machine_pre.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure></details>
+<details><summary>Mid-flight architecture detail</summary><figure class="citris-figure"><a href="../assets/images/citris/state_machine_mid.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Mid-flight architecture detail from the designed operational state machine"><img src="../assets/images/citris/state_machine_mid.png" width="1800" height="900" alt="Mid-flight architecture detail from the designed operational state machine" loading="lazy"></a><figcaption><span class="eyebrow">FIG. 05</span> Supporting operational logic; open the full-size diagram to inspect transitions. <a href="../assets/images/citris/state_machine_mid.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure></details>
+<details><summary>End-flight architecture detail</summary><figure class="citris-figure"><a href="../assets/images/citris/state_machine_end.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: End-flight architecture detail from the designed operational state machine"><img src="../assets/images/citris/state_machine_end.png" width="1800" height="900" alt="End-flight architecture detail from the designed operational state machine" loading="lazy"></a><figcaption><span class="eyebrow">FIG. 06</span> Supporting operational logic; open the full-size diagram to inspect transitions. <a href="../assets/images/citris/state_machine_end.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure></details>
+</div>
+</section>
+<section class="technical">
+<p class="eyebrow">SOFTWARE &amp; SYSTEMS</p><h2>Technical implementation</h2>
+<div class="citris-grid citris-two">
+<div><h3>Front end</h3><p>React and Leaflet for interactive maps, fleet status, and mission visualization.</p></div>
+<div><h3>Back end &amp; simulation</h3><p>Python and FastAPI for graph construction, route search, simulation state, fleet logic, and scenario evaluation.</p></div>
+<div><h3>Data &amp; constraints</h3><p>Ingestion and processing of weather, airspace, terrain, population, and geographic hazard data.</p></div>
+<div><h3>Algorithms &amp; modeling</h3><p>Weighted graphs, Dijkstra search, hard exclusions, soft penalties, multi-leg routing, range limits, and time-based simulation.</p></div>
+</div></section>
+<section id="simulation-results" class="citris-section">
+<p class="eyebrow">MODELED PERFORMANCE</p><h2>Simulation results</h2>
+<p>Representative average clear-day simulation results &mdash; three-pad configuration.</p>
+<dl class="citris-metrics">
+<div><dt>Average flights completed</dt><dd>388</dd></div>
+<div><dt>Average passengers carried</dt><dd>906</dd></div>
+<div><dt>Average net daily profit</dt><dd>$61,878</dd></div>
+<div><dt>Break-even ticket price</dt><dd>$31.64</dd></div>
+</dl>
+<p class="citris-intro">The three-pad configuration averaged 388 flights compared with 337 for two pads, increasing simulated throughput with a very similar break-even ticket price. Severe weather could sharply reduce operations, reinforcing the importance of environmental constraints.</p>
+<p class="muted">These are modeled results under the proposal's operating and economic assumptions, not observed real-world performance or guaranteed business outcomes. <a href="../assets/docs/CITRIS_Aviation_Prize_Merced_Airlink_Nexus_Phase_2.pdf" target="_blank" rel="noopener noreferrer">See the proposal for assumptions and results &nearr;</a></p>
+</section>
+<section class="overview-grid closing">
+<div><p class="eyebrow">SYSTEMS ENGINEERING</p><h2>From routing to system decisions</h2>
+<p>Combining routing, fleet behavior, environmental constraints, and operating assumptions created a framework for evaluating where nodes should be located, how many pads might be needed, and how weather and infrastructure choices affect network availability and performance.</p>
+<p class="muted">Presented as part of the 2026 CITRIS Aviation Prize to a review panel including representatives from MathWorks, NASA, and CITRIS.</p></div>
+<div><p class="eyebrow">FUTURE WORK</p><h2>Future extensions</h2>
+<p>The current implementation focuses on strategic pre-flight routing and network simulation. Future work could add real-time in-flight replanning, tactical conflict avoidance, higher-demand congestion testing, expanded fleet behavior, and deeper demand and scenario calibration.</p></div>
+</section>
+<nav class="project-pagination" aria-label="Project navigation"><a href="self-balancing-robot.html"><span>← Previous project</span><strong>Self-Balancing Robot Control System</strong></a><a href="ornithopter.html"><span>Next project →</span><strong>Flapping-Wing Ornithopter</strong></a></nav>
+</div></main>
+<footer><div class="footer-top"><div><a class="footer-name" href="../index.html">Matthew Huynh</a><p>Mechanical Engineering Student</p></div><div class="footer-contact"><span class="eyebrow">GET IN TOUCH</span><a href="mailto:mhuynh.wbc@outlook.com">mhuynh.wbc@outlook.com</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn ↗</a><a href="https://github.com/matta-h">GitHub ↗</a></div></div><div class="footer-bottom"><span>Designed with purpose. Built with curiosity.</span><a href="#main">Back to top ↑</a></div></footer></body></html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Flapping-Wing Ornithopter | Matthew Huynh</title><meta name="description" content="Mechanical design case study for a multi-segment flapping-wing ornithopter, including synchronized drivetrain development, kinematic analysis, NACA 4415 integration, and manufacturing planning."><meta property="og:title" content="Flapping-Wing Ornithopter | Matthew Huynh"><meta property="og:description" content="A senior mechanical engineering capstone focused on synchronized flapping-wing mechanisms, linkage design, kinematic analysis, and wind-tunnel-ready development."><meta property="og:type" content="website"><!-- TODO: Add an absolute og:image URL when project photography is available. --><link rel="stylesheet" href="../assets/css/styles.css"><script src="../assets/js/main.js" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Matthew Huynh | Portfolio</a><button class="menu-toggle" aria-controls="navigation" aria-expanded="false" hidden>Menu <span aria-hidden="true">+</span></button><nav id="navigation" aria-label="Main navigation"><a href="../index.html#projects" aria-current="page">Projects</a><a href="../about.html">About</a><a href="../resume.html">Resume</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main">
+<div class="case-study ornithopter-study">
+<section class="page-hero">
+<a class="back-link" href="../index.html#projects">&larr; All projects</a>
+<p class="eyebrow">01 / Mechanisms / Mechanical design</p>
+<h1>Flapping-Wing Ornithopter</h1>
+<p class="page-lead">Development of a compact, multi-segment flapping-wing mechanism designed for synchronized actuation, glide capability, and wind-tunnel testing.</p>
+<dl class="project-meta">
+<div><dt>Status</dt><dd>In Progress</dd></div>
+<div><dt>Role</dt><dd>Design Lead / Mechanical Design</dd></div>
+<div><dt>Project type</dt><dd>Senior Mechanical Engineering Capstone</dd></div>
+<div><dt>Tools &amp; methods</dt><dd>SolidWorks &middot; Mechanism Design &middot; Kinematic Analysis &middot; Python &middot; Tolerance Planning &middot; Manufacturing Planning</dd></div>
+</dl>
+<figure class="ornithopter-figure ornithopter-hero">
+<img src="../assets/images/ornithropter/banner.gif" width="1800" height="800" alt="Current SolidWorks assembly of the multi-segment flapping-wing ornithopter, showing the synchronized drivetrain, articulated wing segments, spars, and airfoil geometry." fetchpriority="high">
+<figcaption>Current CAD iteration of the synchronized multi-segment flapping-wing mechanism.</figcaption>
+</figure>
+</section>
+<section class="overview-grid">
+<div><p class="eyebrow">THE CHALLENGE</p><h2>The engineering problem.</h2>
+<p>Develop a compact flapping-wing system that converts continuous motor rotation into synchronized, bird-like wing motion within a 12-inch total wingspan. The mechanism must coordinate multiple articulated segments, accommodate a future glide-lock mode, remain manufacturable, and support planned wind-tunnel testing.</p></div>
+<div><p class="eyebrow">MY ROLE</p><h2>What I owned.</h2>
+<ul class="role-list">
+<li>Led mechanical wing architecture development and successive SolidWorks CAD iterations.</li>
+<li>Designed the crank-linkage and geared drivetrain for synchronized oscillatory wing motion.</li>
+<li>Developed inner-to-outer wing geometry while evaluating packaging, interference, span, and clearances.</li>
+<li>Built a custom kinematic-analysis tool to evaluate linkage dimensions and flapping behavior before fabrication.</li>
+<li>Contributed to airfoil integration, material selection, tolerance planning, and manufacturing decisions.</li>
+</ul></div>
+</section>
+<section class="engineering-process">
+<div class="section-heading"><div><p class="eyebrow">DESIGN &amp; DEVELOPMENT</p><h2>Engineering process.</h2></div></div>
+<section class="process-row">
+<div><p class="eyebrow">PROCESS / 01 &mdash; Concept Development</p>
+<h3>From independent actuation to a mechanically synchronized system</h3>
+<p>Early concepts explored gearing at the wing joints and separate brushless and servo-and-pulley actuation for the inner and outer segments. Gear loading, added mass, and the complexity of coordinating multiple actuators motivated a simpler architecture.</p>
+<p>The design evolved toward a single motor with mechanically coupled wings. A crank-linkage system converts rotation into oscillatory motion, while spars transmit motion to the outer segments for synchronous left-right flapping.</p>
+</div>
+<figure class="ornithopter-figure">
+<img src="../assets/images/ornithropter/preliminary.gif" width="900" height="675" alt="Preliminary ornithopter proof-of-concept CAD showing the early multi-segment wing architecture and linkage-driven flapping concept." loading="lazy">
+<figcaption>Preliminary proof-of-concept CAD, before final airfoil geometry, manufacturing clearances, and tolerances were incorporated.</figcaption>
+</figure>
+</section>
+<section class="process-row">
+<div><p class="eyebrow">PROCESS / 02 &mdash; Drivetrain &amp; Synchronous Flapping</p>
+<h3>Converting rotary input into coordinated wing motion</h3>
+<p>The current drivetrain uses paired gears and crank links to convert continuous motor rotation into reciprocating wing motion. Mechanical coupling synchronizes both wings without independent actuator control.</p>
+<p>Linkage geometry determines flapping amplitude and motion through the wing structure. Gear placement, crank geometry, joint locations, and packaging are central to the design.</p>
+<aside class="ornithopter-callout"><p class="eyebrow">Design intent</p><ul><li>1 primary motor</li><li>2 synchronized wings</li><li>2 articulated segments per wing</li><li>Mechanical left-right synchronization</li></ul></aside></div>
+<figure class="ornithopter-figure">
+<img src="../assets/images/ornithropter/drivetrain.png" width="1200" height="900" alt="Close-up SolidWorks view of the paired gears, crank links, and linkage joints used to synchronize the left and right wing motion." loading="lazy">
+<figcaption>Current gear pair and crank-linkage architecture for synchronous flapping.</figcaption>
+</figure>
+</section>
+<section class="process-row">
+<div><p class="eyebrow">PROCESS / 03 &mdash; Kinematic Analysis</p>
+<h3>Evaluating the mechanism before fabrication</h3>
+<p>I developed a custom mechanism-analysis tool to evaluate linkage geometry before committing to hardware. It simulates a complete crank rotation and allows geometric parameters to be adjusted while monitoring motion and packaging constraints.</p>
+<p>Candidate geometries can be checked for wing travel, maximum span, joint clearance, and linkage interference. This supports faster dimensional iteration before rebuilding the complete CAD assembly or fabricating parts.</p>
+<aside class="ornithopter-callout"><p class="eyebrow">Parameters evaluated</p><ul><li>Crank radius and link lengths</li><li>Wing-segment geometry and angular travel</li><li>Maximum half-span</li><li>Joint clearances and linkage interference</li></ul></aside></div>
+<figure class="ornithopter-figure">
+<img src="../assets/images/ornithropter/tool.png" width="1200" height="900" alt="Custom Python linkage-analysis tool showing the ornithopter mechanism geometry, crank position, span boundaries, linkage clearances, and interference checks." loading="lazy">
+<figcaption>Current kinematic-analysis interface for evaluating geometry and clearance through the flapping cycle.</figcaption>
+</figure>
+</section>
+<section class="process-row">
+<div><p class="eyebrow">PROCESS / 04 &mdash; Wing Geometry &amp; Airfoil Integration</p>
+<h3>Adapting an aerodynamic profile to an articulated wing</h3>
+<p>NACA 4415 is the selected baseline structural and aerodynamic profile for investigating a segmented flapping-wing architecture.</p>
+<p>An extended trailing region draws inspiration from bird-wing feathers. Integrating this shape requires balancing spar placement, joint packaging, manufacturability, and total span.</p>
+</div>
+<figure class="ornithopter-figure">
+<img src="../assets/images/ornithropter/NACA%204415.png" width="1200" height="900" alt="SolidWorks cross-section of the current NACA 4415-inspired wing profile with an extended trailing region intended to support the bird-like wing concept." loading="lazy">
+<figcaption>Current NACA 4415-based section with an extended trailing feature.</figcaption>
+</figure>
+</section>
+<section class="process-row">
+<div><p class="eyebrow">PROCESS / 05 &mdash; Packaging &amp; Manufacturing</p>
+<h3>Designing inside a tightly constrained envelope</h3>
+<p>The 12-inch total wingspan constrains linkage placement, spar routing, joint geometry, and drivetrain packaging. CAD iterations focus on interference, shaft and joint clearances, structural support, and manufacturable geometry.</p>
+<p>The material and process plan combines lightweight wing structures, carbon-fiber spars, additively manufactured joints and mechanism components, and laser-cut parts where appropriate. Fabrication will begin after geometry, clearance, and tolerance reviews are finalized.</p>
+</div>
+<figure class="ornithopter-figure">
+<img src="../assets/images/ornithropter/wing.png" width="1200" height="900" alt="Current SolidWorks wing assembly illustrating articulated wing geometry and structural packaging within the planned wingspan." loading="lazy">
+<figcaption>Current wing CAD supporting packaging and manufacturing planning.</figcaption>
+</figure>
+</section>
+</section>
+<section class="ornithopter-evolution">
+<p class="eyebrow">DESIGN EVOLUTION</p>
+<h2>Reducing complexity through mechanical synchronization</h2>
+<div class="ornithopter-evolution-grid">
+<article><p class="eyebrow">01 / Early concept</p><h3>Joint-Mounted Gearing</h3><p>Gears at the articulated joints offered direct segment control, but potential gear loading, added weight, and mechanical complexity made this approach less attractive.</p></article>
+<article><p class="eyebrow">02 / Intermediate concept</p><h3>Independent Brushless + Servo Actuation</h3><p>Brushless inner-wing actuation and servo-driven outer wings offered independent control. Synchronizing multiple actuators increased control and packaging complexity.</p></article>
+<article><p class="eyebrow">03 / Current approach</p><h3>Single Mechanically Coupled Drivetrain</h3><p>One primary drivetrain produces bilateral flapping and transmits motion through spars and linkages, making synchronization a mechanical property of the system.</p></article>
+</div>
+</section>
+<section class="technical">
+<p class="eyebrow">TECHNICAL HIGHLIGHTS</p><h2>Current design targets</h2>
+<div class="highlight-grid">
+<div><span>Maximum Wingspan</span><h3>12 in</h3></div>
+<div><span>Wing Architecture</span><h3>2 segments per side</h3></div>
+<div><span>Target Flapping Rate</span><h3>4&ndash;8 Hz</h3><p class="muted">Nominal design point: 6 Hz</p></div>
+<div><span>Baseline Airfoil</span><h3>NACA 4415</h3></div>
+<div><span>Actuation</span><h3>Mechanically synchronized drivetrain</h3></div>
+</div>
+</section>
+<section class="overview-grid closing">
+<div><p class="eyebrow">ANALYSIS &amp; VALIDATION</p><h2>Design validation before hardware</h2>
+<p>Preliminary CFD work has established an analysis workflow around NACA 4415. The custom linkage tool and CAD interference checks evaluate motion and physical clearances across the flapping cycle.</p>
+<p>Physical testing is planned and has not occurred. After fabrication, the mechanism is intended for campus wind-tunnel testing with controlled airspeed and angle-of-attack sweeps, comparing recorded aerodynamic and mechanism-response data with the analysis workflow.</p></div>
+<div><p class="eyebrow">CURRENT STATUS</p><h2>Detailed design in progress</h2>
+<p>The flapping architecture, synchronized drivetrain concept, segmented wing layout, and baseline airfoil geometry are established. Linkage dimensions, tolerances, joint geometry, and component packaging are being refined.</p>
+<p>Physical parts have not yet been ordered or assembled. Fabrication, bench testing, and wind-tunnel validation remain future work.</p>
+<ol class="role-list">
+<li>Finalize linkage geometry and interference checks.</li>
+<li>Complete tolerance and manufacturing review.</li>
+<li>Freeze CAD.</li>
+<li>Fabricate and assemble the mechanism.</li>
+<li>Bench-test synchronized flapping.</li>
+<li>Conduct wind-tunnel testing.</li>
+</ol></div>
+</section>
+<nav class="project-pagination" aria-label="Project navigation"><a href="citris.html"><span>← Previous project</span><strong>CITRIS eVTOL Routing & Simulation System</strong></a><a href="uav-gas-sensing.html"><span>Next project →</span><strong>UAV/UGV Gas-Sensing Platform</strong></a></nav>
+</div>
+</main>
+<footer><div class="footer-top"><div><a class="footer-name" href="../index.html">Matthew Huynh</a><p>Mechanical Engineering Student</p></div><div class="footer-contact"><span class="eyebrow">GET IN TOUCH</span><a href="mailto:mhuynh.wbc@outlook.com">mhuynh.wbc@outlook.com</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn ↗</a><a href="https://github.com/matta-h">GitHub ↗</a></div></div><div class="footer-bottom"><span>Designed with purpose. Built with curiosity.</span><a href="#main">Back to top ↑</a></div></footer></body></html>

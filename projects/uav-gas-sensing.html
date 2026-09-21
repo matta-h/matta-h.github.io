@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UAV/UGV Gas-Sensing Platform | Matthew Huynh</title><meta name="description" content="UAV and ground-robot platforms supporting autonomous gas-source localization and environmental sensing research."><meta property="og:title" content="UAV/UGV Gas-Sensing Platform | Matthew Huynh"><meta property="og:description" content="UAV and ground-robot platforms supporting autonomous gas-source localization and environmental sensing research."><meta property="og:type" content="website"><!-- TODO: Add an absolute og:image URL when project photography is available. --><link rel="stylesheet" href="../assets/css/styles.css"><script src="../assets/js/main.js" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Matthew Huynh | Portfolio</a><button class="menu-toggle" aria-controls="navigation" aria-expanded="false" hidden>Menu <span aria-hidden="true">+</span></button><nav id="navigation" aria-label="Main navigation"><a href="../index.html#projects" aria-current="page">Projects</a><a href="../about.html">About</a><a href="../resume.html">Resume</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main">
+<div class="case-study gas-study">
+<section class="page-hero">
+<a class="back-link" href="../index.html#projects">&larr; All projects</a>
+<p class="eyebrow">02 / Autonomy / Research hardware</p>
+<h1>UAV/UGV Gas-Sensing Platform</h1>
+<p class="page-lead">UAV and ground-robot platforms supporting autonomous gas-source localization and environmental sensing research.</p>
+<dl class="project-meta">
+<div><dt>Status</dt><dd><span class="status">In development</span></dd></div>
+<div><dt>My role</dt><dd>UAV co-design &amp; system integration</dd></div>
+<div><dt>Context</dt><dd>MESA Lab / Collaborative research</dd></div>
+<div><dt>Tools &amp; methods</dt><dd>UAV Design &middot; Gas Sensing &middot; ROS</dd></div>
+</dl>
+<figure class="gas-figure gas-hero"><a href="../assets/images/gassensing/drone.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Assembled multirotor UAV with commercial frame, propulsion components, landing gear, and wiring in the lab"><img src="../assets/images/gassensing/drone.jpg" width="5712" height="4284" fetchpriority="high" alt="Assembled multirotor UAV with commercial frame, propulsion components, landing gear, and wiring in the lab"></a><figcaption><span class="eyebrow">FIG. 00</span> Co-designed UAV platform assembled for continued integration. Flight testing has not yet occurred. <a href="../assets/images/gassensing/drone.jpg" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+<p class="gas-intro gas-hero-note">I co-designed the UAV with another team member, including component selection, thrust and power sizing, and integration planning for future source-localization experiments. The platform is being developed alongside a ground robot and simulation workflow.</p>
+<div class="actions"><a class="button" href="https://arxiv.org/html/2609.05569v1" target="_blank" rel="noopener noreferrer">View paper <span aria-hidden="true">&nearr;</span></a><a class="text-link" href="#current-status">Current status &darr;</a></div>
+</section>
+<section class="overview-grid">
+<div><p class="eyebrow">PROJECT CONTEXT</p><h2>Project origin</h2>
+<p>The UAV originated during planning for E2E-Methane-IQ, a proposed multi-scale methane-mapping effort combining satellite, aerial, and ground sensing across the western United States. UC Merced's proposed role focused on high-resolution sensing in the San Joaquin Valley.</p>
+<p>The broader program did not proceed after funding was cut. UAV design work continued, and the platform is now being repurposed for autonomous gas-source localization research.</p></div>
+<div><p class="eyebrow">UAV CO-DESIGN / INTEGRATION</p><h2>My work</h2>
+<ul class="role-list"><li>Co-designed the UAV configuration with another team member.</li><li>Developed thrust-to-weight and power-sizing calculations, and evaluated payload and endurance requirements.</li><li>Supported motor, propeller, ESC, and battery selection.</li><li>Contributed to limited custom fabrication, including motor mounts.</li><li>Assisted with early ROS-based UAV/UGV coordination and portions of the Isaac Sim workflow.</li><li>Contributed to the broader research effort and co-authored the related paper.</li></ul></div>
+</section>
+<section class="engineering-process">
+<div class="section-heading"><div><p class="eyebrow">HARDWARE / SIZING / INTEGRATION</p><h2>Developing the platforms</h2></div></div>
+<section class="gas-section gas-design"><p class="eyebrow">AERIAL PLATFORM</p><h3>Designing the aerial platform</h3>
+<p class="gas-intro">The UAV was developed through system-level component selection and sizing, with most hardware assembled from commercial components. I evaluated propulsion, batteries, frame requirements, payload capacity, and electrical demand as an integrated system alongside my co-designer.</p>
+<div class="gas-grid"><div><h4>Propulsion margin</h4><p>Thrust-to-weight calculations informed motor, propeller, and electronic speed controller selection.</p></div><div><h4>Power &amp; endurance</h4><p>Current draw, power distribution, battery capacity, and estimated flight endurance were considered together.</p></div><div><h4>Payload &amp; integration</h4><p>Payload allowance and integration margin guided the configuration. Custom fabrication was limited, including motor mounts.</p></div></div>
+</section>
+<section class="process-row">
+<div><p class="eyebrow">PHYSICAL INTEGRATION</p><h3>From design to hardware</h3>
+<p>Long component lead times delayed physical integration. The major hardware has now arrived, and the platform has been assembled for continued development.</p>
+<p>Current work focuses on hardware verification, integration, and preparation for controlled testing. Flight performance and physical gas-source localization have not yet been validated.</p></div>
+<figure class="gas-figure"><a href="../assets/images/gassensing/IMG_6160.JPG" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: UAV on a laboratory table with its upper cover removed, exposing electronics and wiring"><img src="../assets/images/gassensing/IMG_6160.JPG" width="5712" height="4284" loading="lazy" alt="UAV on a laboratory table with its upper cover removed, exposing electronics and wiring"></a><figcaption><span class="eyebrow">FIG. 01</span> UAV hardware during integration, with onboard components accessible for verification. <a href="../assets/images/gassensing/IMG_6160.JPG" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="process-row">
+<div><p class="eyebrow">GROUND PLATFORM</p><h3>Ground-robot integration</h3>
+<p>A pre-existing omnidirectional ground robot from another project is being repurposed as the terrestrial half of the sensing system. I did not design or build this UGV.</p>
+<p>Its intended role is close-range localization and follow-up measurements, complementing the UAV's planned wider-area search capability.</p></div>
+<figure class="gas-figure"><a href="../assets/images/gassensing/IMG_6161.JPG" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Pre-existing ground robot with omnidirectional wheels, onboard electronics, and sensing hardware"><img src="../assets/images/gassensing/IMG_6161.JPG" width="5712" height="4284" loading="lazy" alt="Pre-existing ground robot with omnidirectional wheels, onboard electronics, and sensing hardware"></a><figcaption><span class="eyebrow">FIG. 02</span> Pre-existing UGV platform being repurposed for coordinated gas-source localization experiments. <a href="../assets/images/gassensing/IMG_6161.JPG" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="gas-section"><p class="eyebrow">ROS / INTENDED WORKFLOW</p><h3>Multi-platform coordination</h3>
+<p class="gas-intro">I contributed to early ROS-based coordination work between the UAV and UGV. The intended workflow uses aerial sensing to identify promising search regions, followed by closer-range ground localization and measurements.</p>
+<div class="gas-grid gas-two"><div><h4>Aerial</h4><p>Wide-area sensing and search-region identification.</p></div><div><h4>Ground</h4><p>Close-range localization and follow-up measurements.</p></div></div>
+<p class="muted">This describes the planned architecture. A coordinated aerial-to-ground sensing mission has not yet been demonstrated physically.</p>
+</section>
+<section class="gas-section"><p class="eyebrow">SUPPORTING SIMULATION WORK</p><h3>Simulation and control prototyping</h3>
+<p class="gas-intro">Simulation was used to explore ground-platform control and integration before physical experiments. I assisted with portions of the Isaac Sim setup and control workflow; the majority of this simulation development was led by another team member.</p>
+<figure class="gas-figure"><a href="../assets/images/gassensing/3CE8E113-A4E0-4B2F-8392-836511A04F61_1_201_a.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: NVIDIA Isaac Sim workspace showing a simulated ground robot, connected action-graph nodes, and controller properties"><img src="../assets/images/gassensing/3CE8E113-A4E0-4B2F-8392-836511A04F61_1_201_a.jpeg" width="4032" height="2268" loading="lazy" alt="NVIDIA Isaac Sim workspace showing a simulated ground robot, connected action-graph nodes, and controller properties"></a><figcaption><span class="eyebrow">FIG. 03</span> NVIDIA Isaac Sim environment used for early differential-drive and control-logic development. <a href="../assets/images/gassensing/3CE8E113-A4E0-4B2F-8392-836511A04F61_1_201_a.jpeg" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+</section>
+<section class="technical"><p class="eyebrow">SYSTEMS ENGINEERING</p><h2>From sensing algorithm to physical platform</h2>
+<p class="gas-intro">The long-term challenge is connecting localization methods to sensing platforms that can operate in real environments. The UAV, UGV, simulation environment, ROS coordination, and localization framework each contribute a different layer.</p>
+<p class="gas-intro">My work centered on the physical aerial platform and supporting integration, helping prepare the hardware/software foundation for future testing.</p>
+</section>
+<section class="gas-section gas-publication"><p class="eyebrow">RELATED RESEARCH</p><h2>Gas-source localization</h2>
+<p class="gas-intro">The broader research investigates how an sUAS can navigate turbulent concentration fields and locate an unknown gas source using information-guided planning, reinforcement learning, and safety constraints.</p>
+<p class="gas-intro">The source-localization and reinforcement-learning framework was primarily developed by Sachin and other research-team members. My contributions focused on UAV co-design, system integration, and supporting hardware/software work.</p>
+<article><p class="eyebrow">RELATED PUBLICATION / 2026</p><h3>Information-Guided Safe Reinforcement Learning for Autonomous Gas Source Localization using sUAS</h3>
+<p>Sachin Giri, Thomas Zhao, Matthew Huynh, YangQuan Chen</p>
+<a class="text-link" href="https://arxiv.org/html/2609.05569v1" target="_blank" rel="noopener noreferrer">View paper &nearr;</a></article>
+</section>
+<section class="overview-grid closing" id="current-status">
+<div><p class="eyebrow">PHYSICAL HARDWARE</p><h2>Current status</h2>
+<p>The UAV is assembled after extended component lead times, and the project is preparing for flight and gas-sensing experiments. The ground platform is being adapted for the same research effort.</p>
+<p>Physical testing is planned. The UAV has not yet undergone flight testing, and end-to-end gas-source localization has not been demonstrated in hardware.</p></div>
+<div><p class="eyebrow">SIMULATION TO VALIDATION</p><h2>Preparing for physical validation</h2>
+<p>Localization methods, safety logic, and platform-control workflows continue to be developed in simulation. These research and simulation activities are distinct from validation of the assembled hardware.</p>
+<p>The next work connects hardware verification, sensing integration, and controlled physical experiments.</p></div>
+</section>
+<nav class="project-pagination" aria-label="Project navigation"><a href="ornithopter.html"><span>← Previous project</span><strong>Flapping-Wing Ornithopter</strong></a><a href="mercury-detection.html"><span>Next project →</span><strong>Atmospheric Mercury Detection System</strong></a></nav>
+</div></main>
+<footer><div class="footer-top"><div><a class="footer-name" href="../index.html">Matthew Huynh</a><p>Mechanical Engineering Student</p></div><div class="footer-contact"><span class="eyebrow">GET IN TOUCH</span><a href="mailto:mhuynh.wbc@outlook.com">mhuynh.wbc@outlook.com</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn ↗</a><a href="https://github.com/matta-h">GitHub ↗</a></div></div><div class="footer-bottom"><span>Designed with purpose. Built with curiosity.</span><a href="#main">Back to top ↑</a></div></footer></body></html>

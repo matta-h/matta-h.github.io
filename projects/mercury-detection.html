@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atmospheric Mercury Detection System | Matthew Huynh</title><meta name="description" content="Compact airborne mercury-detection payload concept involving flow-path redesign, optical sensing subsystems, and LED-control electronics."><meta property="og:title" content="Atmospheric Mercury Detection System | Matthew Huynh"><meta property="og:description" content="Compact airborne mercury-detection payload concept involving flow-path redesign, optical sensing subsystems, and LED-control electronics."><meta property="og:type" content="website"><!-- TODO: Add an absolute og:image URL when project photography is available. --><link rel="stylesheet" href="../assets/css/styles.css"><script src="../assets/js/main.js" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Matthew Huynh | Portfolio</a><button class="menu-toggle" aria-controls="navigation" aria-expanded="false" hidden>Menu <span aria-hidden="true">+</span></button><nav id="navigation" aria-label="Main navigation"><a href="../index.html#projects" aria-current="page">Projects</a><a href="../about.html">About</a><a href="../resume.html">Resume</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main">
+<div class="case-study hg-study">
+<section class="page-hero">
+<a class="back-link" href="../index.html#projects">&larr; All projects</a>
+<p class="eyebrow">04 / Sensing / System integration</p>
+<h1>Atmospheric Mercury Detection System</h1>
+<p class="page-lead">Compact airborne mercury-detection payload concept involving flow-path redesign, optical sensing subsystems, and LED-control electronics.</p>
+<dl class="project-meta">
+<div><dt>Contribution stage</dt><dd>Subsystem design &amp; prototyping</dd></div>
+<div><dt>My role</dt><dd>Reverse engineering, detector/electrical architecture, LED electronics &amp; modeling support</dd></div>
+<div><dt>Project context</dt><dd>Early-stage research hardware</dd></div>
+<div><dt>Tools &amp; methods</dt><dd>Sensors &middot; Optical Sensing &middot; Electronics &middot; PCB Design</dd></div>
+</dl>
+<figure class="hg-figure hg-hero"><a href="../assets/images/hg/diagram.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Mercury-sensing architecture showing atmospheric intake, filters, pre-concentration, gold amalgamation trap, fluorescence baffle chamber, PMT, catalyst filter, and pump"><img src="../assets/images/hg/diagram.png" width="1448" height="1086" fetchpriority="high" alt="Mercury-sensing architecture showing atmospheric intake, filters, pre-concentration, gold amalgamation trap, fluorescence baffle chamber, PMT, catalyst filter, and pump"></a><figcaption><span class="eyebrow">FIG. 00</span> High-level sensing architecture derived from teardown and analysis of the original mercury detection workflow. <a href="../assets/images/hg/diagram.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+<p class="hg-intro hg-hero-note">This project explored how a broken bench-scale mercury detector could be understood and reconfigured into a compact payload concept for future drone-based sensing. My contribution focused on reverse engineering the workflow, evaluating detector interfaces and electrical architecture, developing LED-control electronics, and supporting subsystem modeling.</p>
+<p class="hg-scope">My work concluded at the subsystem-development stage. The final integrated airborne payload was not completed during my involvement.</p>
+</section>
+<section class="overview-grid">
+<div><p class="eyebrow">RESEARCH CONTEXT</p><h2>Overview</h2>
+<p>The project began with teardown and study of a broken Brooks Rand Model 3 mercury detection system. The aim was to understand its sensing chain and identify the functions that a smaller redesign would need to preserve.</p>
+<p>Development focused on key subsystems and early electronics and modeling work, establishing groundwork for a compact sensing package rather than replicating the entire instrument at once.</p></div>
+<div><p class="eyebrow">MY CONTRIBUTION</p><h2>My work</h2>
+<ul class="role-list"><li>Helped reverse engineer the Brooks Rand Model 3 through teardown and study.</li><li>Contributed to translating the bench-scale architecture into a smaller airborne concept.</li><li>Evaluated PMT, socket, and high-voltage interface options.</li><li>Helped define top-level power and electrical signal architecture.</li><li>Designed single-channel LED intensity-control circuitry and expanded it to a multi-LED design.</li><li>Validated the LED-control concept on a breadboard.</li><li>Supported early mercury signal and transport modeling.</li></ul></div>
+</section>
+<section class="engineering-process">
+<div class="section-heading"><div><p class="eyebrow">SYSTEM STUDY &rarr; ELECTRONICS &rarr; PROTOTYPING</p><h2>Subsystem development</h2></div></div>
+<section class="hg-section hg-chain">
+<p class="eyebrow">01 / REVERSE ENGINEERING</p><h3>Understanding the sensing chain</h3>
+<p class="hg-intro">Teardown and system study helped map airflow, trapping, filtering, and optical detection. The architecture above identifies the major functions that would need to remain connected in a smaller redesign.</p>
+<div class="hg-grid"><div><h4>Intake &amp; conditioning</h4><p>Atmospheric air intake with particulate, desiccant, and carbon filtering.</p></div><div><h4>Concentration &amp; detection</h4><p>Pre-concentration and amalgamation trapping linked to a fluorescence baffle chamber and PMT-based optical detection.</p></div><div><h4>Flow path</h4><p>Pump-driven transport through the sensing pathway, catalyst filtering, and exhaust.</p></div></div>
+</section>
+<section class="hg-section" id="detector-architecture">
+<p class="eyebrow">02 / DETECTOR &amp; ELECTRICAL INTERFACES</p><h3>Detector &amp; electrical architecture</h3>
+<p class="hg-intro">Another part of my work involved evaluating detector hardware and defining how the major electrical subsystems would interface. I compared photomultiplier tube and high-voltage socket options based on spectral response, electrical compatibility, cost, and integration requirements, then helped establish the top-level power and signal architecture for the compact sensing system.</p>
+<div class="hg-grid"><div><h4>Detector selection</h4><p>Compared PMT options for UV sensitivity, interface compatibility, dark current, cost, and availability.</p></div><div><h4>High-voltage interface</h4><p>Evaluated socket and high-voltage configurations compatible with the selected PMT.</p></div><div><h4>System architecture</h4><p>Helped define power domains, control electronics, sensing interfaces, and subsystem relationships.</p></div></div>
+</section>
+<section class="hg-section">
+<p class="eyebrow">03 / ELECTRONICS DEVELOPMENT</p><h2>LED-control electronics</h2>
+<p class="hg-intro">A major part of my contribution was circuitry for controlling LED brightness and excitation intensity in the optical subsystem. I began with a single-channel design using microcontroller control and MOSFET switching, then expanded the approach to multiple LEDs.</p>
+<div class="hg-circuits">
+<div><h3>Single-channel concept</h3><p>The initial driver established a compact, adaptable control approach for one LED.</p>
+<figure class="hg-figure"><a href="../assets/images/hg/singleLEDdiagram.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Initial single-LED driver schematic with a microcontroller, MOSFET, linear driver, and LED"><img src="../assets/images/hg/singleLEDdiagram.png" width="912" height="527" loading="lazy" alt="Initial single-LED driver schematic with a microcontroller, MOSFET, linear driver, and LED"></a><figcaption><span class="eyebrow">FIG. 01</span> Initial single-channel LED intensity-control schematic. <a href="../assets/images/hg/singleLEDdiagram.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</div>
+<div><h3>Multi-channel expansion</h3><p>The expanded design repeated the control channels for multiple LEDs, supporting future optical-subsystem integration.</p>
+<figure class="hg-figure"><a href="../assets/images/hg/multipleLEDdiagram.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Expanded LED-control schematic with multiple driver and MOSFET channels connected to a microcontroller"><img src="../assets/images/hg/multipleLEDdiagram.png" width="3012" height="1599" loading="lazy" alt="Expanded LED-control schematic with multiple driver and MOSFET channels connected to a microcontroller"></a><figcaption><span class="eyebrow">FIG. 02</span> Expanded multi-channel LED-control schematic; final board integration remained future work. <a href="../assets/images/hg/multipleLEDdiagram.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</div></div>
+</section>
+<section class="process-row hg-breadboard">
+<div><p class="eyebrow">04 / PHYSICAL PROTOTYPING</p><h3>Breadboard testing</h3>
+<p>The LED-control concept was tested on a breadboard before moving toward formal board integration. This quick prototype confirmed that the brightness/intensity-control approach worked as expected.</p>
+<p>The result established the circuit concept at the subsystem level. It did not constitute a completed optical instrument or integrated drone payload.</p></div>
+<figure class="hg-figure"><a href="../assets/images/hg/realcircuit.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Breadboard prototype with microcontroller, switching component, and wiring for LED intensity-control testing"><img src="../assets/images/hg/realcircuit.jpg" width="5712" height="3213" loading="lazy" alt="Breadboard prototype with microcontroller, switching component, and wiring for LED intensity-control testing"></a><figcaption><span class="eyebrow">FIG. 03</span> Breadboard validation of the LED-control circuit before board-level integration. <a href="../assets/images/hg/realcircuit.jpg" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="process-row hg-modeling" id="signal-modeling">
+<div><p class="eyebrow">05 / MODELING SUPPORT</p><h3>Signal modeling</h3>
+<p>Experimental mercury-detector pulses were compared against an exponentially modified Gaussian (EMG) model to characterize peak arrival time, width, tailing, and amplitude. This provided an intermediate modeling step toward a more physics-based representation of mercury release, transport, and detection.</p>
+<dl class="hg-model-parameters">
+<div><dt>&mu;</dt><dd>Peak center / arrival time</dd></div>
+<div><dt>&sigma;</dt><dd>Gaussian width / peak spread</dd></div>
+<div><dt>&tau;</dt><dd>Exponential decay / tailing</dd></div>
+<div><dt>A</dt><dd>Amplitude / peak height</dd></div>
+</dl></div>
+<figure class="hg-figure"><a class="hg-plot-window" href="../assets/images/hg/modeling.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size experimental mercury-signal and EMG fit comparison"><img src="../assets/images/hg/modeling.png" width="1306" height="977" loading="lazy" alt="Experimental mercury-signal runs 29 through 34 compared with EMG peak fits over time"></a><figcaption><span class="eyebrow">FIG. 04</span> Experimental mercury-signal runs compared with EMG peak fits. <a href="../assets/images/hg/modeling.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+</section>
+<section class="technical"><p class="eyebrow">CONTRIBUTION SUMMARY</p><h2>Technical groundwork</h2>
+<div class="highlight-grid"><div><span>System understanding</span><h3>Teardown &amp; sensing-chain analysis</h3></div><div><span>Electronics</span><h3>Single- to multi-LED control</h3></div><div><span>Prototyping</span><h3>Breadboard-validated concept</h3></div></div>
+</section>
+<section class="hg-section hg-status">
+<div class="hg-intro"><p class="eyebrow">HANDOFF / INCOMPLETE INTEGRATION</p><h2>Project status</h2>
+<p>My involvement concluded during subsystem development. The workflow had been studied, LED-control electronics designed and prototyped, breadboard testing completed successfully, and parts ordered for further assembly.</p>
+<p>At that point, the broader effort was awaiting additional components and continued integration. The complete sensing instrument and airborne payload were not finished during my time on the project.</p></div>
+</section>
+<nav class="project-pagination" aria-label="Project navigation"><a href="uav-gas-sensing.html"><span>← Previous project</span><strong>UAV/UGV Gas-Sensing Platform</strong></a><a href="self-balancing-robot.html"><span>Next project →</span><strong>Self-Balancing Robot Control System</strong></a></nav>
+</div></main>
+<footer><div class="footer-top"><div><a class="footer-name" href="../index.html">Matthew Huynh</a><p>Mechanical Engineering Student</p></div><div class="footer-contact"><span class="eyebrow">GET IN TOUCH</span><a href="mailto:mhuynh.wbc@outlook.com">mhuynh.wbc@outlook.com</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn ↗</a><a href="https://github.com/matta-h">GitHub ↗</a></div></div><div class="footer-bottom"><span>Designed with purpose. Built with curiosity.</span><a href="#main">Back to top ↑</a></div></footer></body></html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Self-Balancing Robot Control System | Matthew Huynh</title><meta name="description" content="IMU sensor fusion and nested feedback control for a provided two-wheeled inverted-pendulum platform."><meta property="og:title" content="Self-Balancing Robot Control System | Matthew Huynh"><meta property="og:description" content="IMU sensor fusion and nested feedback control for a provided two-wheeled inverted-pendulum platform."><meta property="og:type" content="website"><!-- TODO: Add an absolute og:image URL when project photography is available. --><link rel="stylesheet" href="../assets/css/styles.css"><script src="../assets/js/main.js" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Matthew Huynh | Portfolio</a><button class="menu-toggle" aria-controls="navigation" aria-expanded="false" hidden>Menu <span aria-hidden="true">+</span></button><nav id="navigation" aria-label="Main navigation"><a href="../index.html#projects" aria-current="page">Projects</a><a href="../about.html">About</a><a href="../resume.html">Resume</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main">
+<div class="case-study pid-study">
+<section class="page-hero">
+<a class="back-link" href="../index.html#projects">&larr; All projects</a>
+<p class="eyebrow">05 / Robotics / Controls</p>
+<h1>Self-Balancing Robot Control System</h1>
+<p class="page-lead">IMU sensor fusion and nested feedback control for a two-wheeled inverted-pendulum platform.</p>
+<dl class="project-meta">
+<div><dt>Platform</dt><dd>Provided two-wheeled robot</dd></div>
+<div><dt>My role</dt><dd>Sensing, estimation, controls &amp; testing</dd></div>
+<div><dt>Execution</dt><dd>Arduino Mega 2560</dd></div>
+<div><dt>Tools &amp; methods</dt><dd>Simulink &middot; Kalman Filter &middot; PID Control &middot; Embedded Systems</dd></div>
+</dl>
+<figure class="pid-figure pid-video">
+<video controls muted playsinline preload="none" width="640" height="360" poster="../assets/images/pid/IMG_6159.JPG" aria-label="Hardware testing of the provided robot under feedback control" aria-describedby="robot-video-caption">
+<source src="../assets/images/pid/robot-testing.mp4" type="video/mp4">
+<p><a href="../assets/images/pid/robot-testing.mp4">Open the robot-testing video</a>.</p>
+</video>
+<figcaption id="robot-video-caption"><span class="eyebrow">FIG. 00 / HARDWARE TESTING</span> The provided robot responds during controller testing. Brief balancing periods were observed; sustained stability remained limited. <a href="../assets/images/pid/robot-testing.mp4">Open video &nearr;</a></figcaption>
+</figure>
+<p class="pid-intro pid-hero-note">Using a provided two-wheeled inverted-pendulum platform, I developed and tuned the sensing, state-estimation, and feedback-control system for real-time stabilization. My work combined IMU sensor fusion, nested angle/speed control, encoder feedback, and onboard execution.</p>
+<div class="actions"><a class="button" href="../assets/docs/me142finalproject.pdf" target="_blank" rel="noopener noreferrer">View report <span aria-hidden="true">&nearr;</span></a><a class="text-link" href="#hardware-testing">Read testing results &darr;</a></div>
+</section>
+<section class="overview-grid">
+<div><p class="eyebrow">THE CHALLENGE</p><h2>Control problem</h2>
+<p>A two-wheeled balancing robot behaves like an inverted pendulum: its upright equilibrium is unstable and requires continuous sensing and rapid corrective actuation.</p>
+<p>The controller must estimate tilt and command the wheel motors quickly enough to resist falling. Noise, encoder disturbances, actuator nonlinearities, timing delays, and mechanical vibration made implementation as important as controller design.</p></div>
+<div><p class="eyebrow">SENSING / CONTROL / EMBEDDED DEPLOYMENT</p><h2>My work</h2>
+<p>The chassis and mechanical platform were provided. I did not design, fabricate, or assemble the robot; my work focused on its control system.</p>
+<ul class="role-list"><li>Implemented MPU6050 processing and the Kalman-filter tilt estimator.</li><li>Developed and tuned the inner PD angle loop and outer PI wheel-speed loop.</li><li>Implemented encoder processing, low-pass filtering, and tilt-dependent gating.</li><li>Deployed the controller to the Arduino Mega and investigated host/USB response lag.</li><li>Performed hardware testing and iterative control tuning.</li></ul></div>
+</section>
+<section class="engineering-process">
+<div class="section-heading"><div><p class="eyebrow">CONTROL THEORY &rarr; IMPLEMENTATION &rarr; ITERATION</p><h2>Control-system development</h2></div></div>
+<section class="process-row"><div><p class="eyebrow">01 / HARDWARE CONTEXT</p><h3>Provided test platform</h3>
+<p>The existing platform included an Arduino Mega 2560, MPU6050 IMU, two DC motors, wheel encoders, and a motor driver. These components provided the sensing and actuation paths used in the control work.</p>
+<p>The two-wheeled geometry made tilt estimation, fast motor corrections, and reliable wheel-speed feedback central to testing.</p></div>
+<figure class="pid-figure"><a href="../assets/images/pid/IMG_6159.JPG" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Provided two-wheeled robot with stacked chassis, wheel motors, and onboard electronics"><img src="../assets/images/pid/IMG_6159.JPG" width="5712" height="4284" loading="lazy" alt="Provided two-wheeled robot with stacked chassis, wheel motors, and onboard electronics"></a><figcaption><span class="eyebrow">FIG. 01</span> Provided two-wheeled robot platform used for control-system development and testing. <a href="../assets/images/pid/IMG_6159.JPG" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="pid-section"><p class="eyebrow">02 / STATE ESTIMATION</p><h2>Estimating tilt</h2>
+<p class="pid-intro">Accelerometer-derived tilt is sensitive to motion and linear acceleration, while integrating gyroscope rate accumulates drift. I combined both MPU6050 signals in a one-dimensional Kalman filter to produce the roll-angle estimate used by the controller.</p>
+<p class="pid-signal">Accelerometer + gyroscope &rarr; Kalman filter &rarr; estimated tilt</p>
+<figure class="pid-figure"><a href="../assets/images/pid/nestanglectrllloop.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Simulink MPU6050 accelerometer and gyroscope signals feeding the KalmanFilterRoll subsystem"><img src="../assets/images/pid/nestanglectrllloop.png" width="2415" height="485" loading="lazy" alt="Simulink MPU6050 accelerometer and gyroscope signals feeding the KalmanFilterRoll subsystem"></a><figcaption><span class="eyebrow">FIG. 02</span> Simulink implementation of the MPU6050 sensor-fusion and Kalman-filter roll estimator. <a href="../assets/images/pid/nestanglectrllloop.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="pid-section"><p class="eyebrow">03 / CONTROL ARCHITECTURE</p><h2>Nested feedback control</h2>
+<div class="pid-grid"><div><h3>Fast inner loop: angle</h3><p>A discrete-time PD controller addresses the fast, unstable angular dynamics and commands corrective motor action.</p></div><div><h3>Slower outer loop: speed</h3><p>A PI controller regulates wheel speed by adjusting the inner-loop angle reference. Its bounded angle-bias output helps correct slow translational drift.</p></div></div>
+<p class="pid-signal">Wheel-speed error &rarr; PI &rarr; bounded angle bias &rarr; angle reference &rarr; PD &rarr; motor command</p>
+<figure class="pid-figure"><a href="../assets/images/pid/lowpassandencoder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Simulink outer PI speed-control subsystem with proportional and integral paths, AngleBiasSat saturation, and angle-reference summation"><img src="../assets/images/pid/lowpassandencoder.png" width="1385" height="354" loading="lazy" alt="Simulink outer PI speed-control subsystem with proportional and integral paths, AngleBiasSat saturation, and angle-reference summation"></a><figcaption><span class="eyebrow">FIG. 03</span> Outer speed-control and angle-bias logic used to modify the inner-loop angle reference; this is a subsystem view. <a href="../assets/images/pid/lowpassandencoder.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="pid-section"><p class="eyebrow">04 / ENCODER FEEDBACK</p><h2>Wheel-speed estimation</h2>
+<p class="pid-intro">Wheel-speed feedback was derived from discrete encoder-count differences. Quantization, vibration, and mechanical chatter produced noisy estimates, so I added low-pass filtering before feeding the slower speed-control loop.</p>
+<p class="pid-intro">Successive count differences over the sample period provide a count rate; conversion to wheel speed and filtering make that signal usable for feedback.</p>
+<figure class="pid-figure"><a href="../assets/images/pid/kalmanfilter.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Simulink encoder pulse processing with count differences, count-to-speed conversion, and low-pass filter feedback"><img src="../assets/images/pid/kalmanfilter.png" width="2407" height="561" loading="lazy" alt="Simulink encoder pulse processing with count differences, count-to-speed conversion, and low-pass filter feedback"></a><figcaption><span class="eyebrow">FIG. 04</span> Encoder pulse processing, wheel-speed estimation, and low-pass filtering. <a href="../assets/images/pid/kalmanfilter.png" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+<section class="pid-section"><p class="eyebrow">05 / PRACTICAL DEBUGGING</p><h2>Dealing with real hardware</h2>
+<div class="pid-grid"><div><h3>False speed estimates</h3><p>When the robot was lifted, shaken, or vibrating, encoder feedback could indicate motion that did not represent useful ground velocity. The outer PI loop could then inject an inappropriate angle bias into the balancing controller.</p></div><div><h3>Tilt-dependent gating</h3><p>I added gating based on tilt angle so the speed controller would not influence the angle reference outside the useful balancing region. This reduced false speed-feedback influence during unstable conditions.</p></div></div>
+</section>
+<section class="process-row pid-execution"><div><p class="eyebrow">06 / REAL-TIME EXECUTION</p><h3>Moving the control loop onto the microcontroller</h3>
+<p>Early tests ran the Simulink workflow on a host computer communicating with the Arduino over USB. This implementation showed noticeable response lag, reducing the controller's effectiveness on an unstable plant.</p>
+<p>Deploying the control logic directly to the Arduino Mega substantially improved responsiveness by removing the host/USB path from the real-time feedback loop.</p>
+<div class="pid-path"><p class="eyebrow">HOST EXECUTION</p><p>Sensor &rarr; Arduino &rarr; USB &rarr; PC / Simulink &rarr; USB &rarr; Arduino &rarr; motors</p><p class="eyebrow">EMBEDDED EXECUTION</p><p>Sensor &rarr; Arduino control loop &rarr; motors</p></div></div>
+<figure class="pid-figure"><a href="../assets/images/pid/IMG_0128.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size: Alternate view of the provided robot showing onboard electronics, motor wiring, and wheel assembly"><img src="../assets/images/pid/IMG_0128.jpg" width="5712" height="4284" loading="lazy" alt="Alternate view of the provided robot showing onboard electronics, motor wiring, and wheel assembly"></a><figcaption><span class="eyebrow">FIG. 05</span> Provided robot platform and onboard electronics used during embedded control development. <a href="../assets/images/pid/IMG_0128.jpg" target="_blank" rel="noopener noreferrer">View full size &nearr;</a></figcaption></figure>
+</section>
+</section>
+<section class="technical"><p class="eyebrow">SYSTEM SUMMARY</p><h2>Technical implementation</h2>
+<div class="pid-grid"><div><h3>Control &amp; modeling</h3><p>Simulink, discrete-time feedback control, and nested PD / PI loops.</p></div><div><h3>State estimation</h3><p>MPU6050 accelerometer/gyroscope fusion and a 1D Kalman filter.</p></div><div><h3>Embedded execution</h3><p>Arduino Mega 2560 and Embedded Coder deployment.</p></div><div><h3>Feedback processing</h3><p>Wheel encoders, discrete speed estimation, low-pass filtering, and tilt-dependent gating.</p></div></div>
+</section>
+<section class="overview-grid closing" id="hardware-testing">
+<div><p class="eyebrow">OBSERVED RESULTS</p><h2>Hardware testing</h2>
+<p>Testing produced brief periods of stable balance under controlled conditions. Introducing the outer speed-control loop improved slow-drift behavior compared with angle-only control.</p>
+<p>Sustained balance remained limited by encoder noise, mechanical vibration and backlash, actuator nonlinearities, timing effects, and remaining tuning challenges. The testing video above documents the real platform's response.</p></div>
+<div><p class="eyebrow">ENGINEERING LESSONS</p><h2>From control theory to real hardware</h2>
+<p>Sensor noise, quantization, encoder chatter, saturation, backlash, sample timing, and communication latency all changed controller behavior.</p>
+<p>The project reinforced that a theoretically reasonable controller is a starting point. Signal conditioning, predictable execution timing, and the mechanical behavior of the plant are equally important to a working feedback system.</p></div>
+</section>
+<nav class="project-pagination" aria-label="Project navigation"><a href="mercury-detection.html"><span>← Previous project</span><strong>Atmospheric Mercury Detection System</strong></a><a href="citris.html"><span>Next project →</span><strong>CITRIS eVTOL Routing & Simulation System</strong></a></nav>
+</div></main>
+<footer><div class="footer-top"><div><a class="footer-name" href="../index.html">Matthew Huynh</a><p>Mechanical Engineering Student</p></div><div class="footer-contact"><span class="eyebrow">GET IN TOUCH</span><a href="mailto:mhuynh.wbc@outlook.com">mhuynh.wbc@outlook.com</a><a href="https://www.linkedin.com/in/matthewlhuynh/">LinkedIn ↗</a><a href="https://github.com/matta-h">GitHub ↗</a></div></div><div class="footer-bottom"><span>Designed with purpose. Built with curiosity.</span><a href="#main">Back to top ↑</a></div></footer></body></html>
